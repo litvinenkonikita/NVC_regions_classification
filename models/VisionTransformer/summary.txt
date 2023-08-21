@@ -3,11 +3,11 @@ Layer (type:depth-idx)                   Output Shape              Param #
 ==========================================================================================
 VisionTransformer                        [1, 4]                    443,904
 ├─PatchEmbed: 1-1                        [1, 576, 768]             --
-│    └─Conv2d: 2-1                       [1, 768, 24, 24]          589,824
+│    └─Conv2d: 2-1                       [1, 768, 24, 24]          590,592
 │    └─Identity: 2-2                     [1, 576, 768]             --
 ├─Dropout: 1-2                           [1, 577, 768]             --
 ├─Identity: 1-3                          [1, 577, 768]             --
-├─LayerNorm: 1-4                         [1, 577, 768]             1,536
+├─Identity: 1-4                          [1, 577, 768]             --
 ├─Sequential: 1-5                        [1, 577, 768]             --
 │    └─Block: 2-3                        [1, 577, 768]             --
 │    │    └─LayerNorm: 3-1               [1, 577, 768]             1,536
@@ -122,13 +122,13 @@ VisionTransformer                        [1, 4]                    443,904
 ├─Dropout: 1-8                           [1, 768]                  --
 ├─Linear: 1-9                            [1, 4]                    3,076
 ==========================================================================================
-Total params: 86,094,340
-Trainable params: 86,094,340
+Total params: 86,093,572
+Trainable params: 86,093,572
 Non-trainable params: 0
-Total mult-adds (M): 424.80
+Total mult-adds (M): 425.24
 ==========================================================================================
 Input size (MB): 1.77
-Forward/backward pass size (MB): 478.58
+Forward/backward pass size (MB): 475.04
 Params size (MB): 342.60
-Estimated Total Size (MB): 822.95
+Estimated Total Size (MB): 819.40
 ==========================================================================================
