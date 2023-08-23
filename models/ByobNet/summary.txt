@@ -2,51 +2,59 @@
 Layer (type:depth-idx)                             Output Shape              Param #
 ====================================================================================================
 ByobNet                                            [1, 4]                    --
-├─Stem: 1-1                                        [1, 64, 96, 96]           --
-│    └─ConvNormAct: 2-1                            [1, 24, 192, 192]         --
-│    │    └─Conv2d: 3-1                            [1, 24, 192, 192]         648
-│    │    └─BatchNormAct2d: 3-2                    [1, 24, 192, 192]         48
-│    └─ConvNormAct: 2-2                            [1, 32, 192, 192]         --
-│    │    └─Conv2d: 3-3                            [1, 32, 192, 192]         6,912
-│    │    └─BatchNormAct2d: 3-4                    [1, 32, 192, 192]         64
-│    └─ConvNormAct: 2-3                            [1, 64, 96, 96]           --
-│    │    └─Conv2d: 3-5                            [1, 64, 96, 96]           18,432
-│    │    └─BatchNormAct2d: 3-6                    [1, 64, 96, 96]           128
-├─Sequential: 1-2                                  [1, 1536, 12, 12]         --
-│    └─Sequential: 2-4                             [1, 256, 96, 96]          --
-│    │    └─BottleneckBlock: 3-7                   [1, 256, 96, 96]          75,008
-│    │    └─BottleneckBlock: 3-8                   [1, 256, 96, 96]          70,400
-│    └─Sequential: 2-5                             [1, 512, 48, 48]          --
-│    │    └─BottleneckBlock: 3-9                   [1, 512, 48, 48]          379,392
-│    │    └─BottleneckBlock: 3-10                  [1, 512, 48, 48]          280,064
-│    │    └─BottleneckBlock: 3-11                  [1, 512, 48, 48]          280,064
-│    └─Sequential: 2-6                             [1, 1536, 24, 24]         --
-│    │    └─BottleneckBlock: 3-12                  [1, 1536, 24, 24]         2,907,648
-│    │    └─BottleneckBlock: 3-13                  [1, 1536, 24, 24]         2,511,360
-│    │    └─BottleneckBlock: 3-14                  [1, 1536, 24, 24]         2,511,360
-│    └─Sequential: 2-7                             [1, 1536, 12, 12]         --
-│    │    └─BottleneckBlock: 3-15                  [1, 1536, 12, 12]         4,873,728
-│    │    └─BottleneckBlock: 3-16                  [1, 1536, 12, 12]         2,511,360
-├─ConvNormAct: 1-3                                 [1, 1280, 12, 12]         --
-│    └─Conv2d: 2-8                                 [1, 1280, 12, 12]         1,966,080
-│    └─BatchNormAct2d: 2-9                         [1, 1280, 12, 12]         2,560
-│    │    └─Identity: 3-17                         [1, 1280, 12, 12]         --
-│    │    └─SiLU: 3-18                             [1, 1280, 12, 12]         --
+├─Stem: 1-1                                        [1, 128, 84, 84]          --
+│    └─ConvNormAct: 2-1                            [1, 16, 167, 167]         --
+│    │    └─Conv2d: 3-1                            [1, 16, 167, 167]         432
+│    │    └─BatchNormAct2d: 3-2                    [1, 16, 167, 167]         32
+│    └─ConvNormAct: 2-2                            [1, 32, 167, 167]         --
+│    │    └─Conv2d: 3-3                            [1, 32, 167, 167]         4,608
+│    │    └─BatchNormAct2d: 3-4                    [1, 32, 167, 167]         64
+│    └─ConvNormAct: 2-3                            [1, 64, 167, 167]         --
+│    │    └─Conv2d: 3-5                            [1, 64, 167, 167]         18,432
+│    │    └─BatchNormAct2d: 3-6                    [1, 64, 167, 167]         128
+│    └─ConvNormAct: 2-4                            [1, 128, 84, 84]          --
+│    │    └─Conv2d: 3-7                            [1, 128, 84, 84]          73,728
+│    │    └─BatchNormAct2d: 3-8                    [1, 128, 84, 84]          256
+├─Sequential: 1-2                                  [1, 1536, 11, 11]         --
+│    └─Sequential: 2-5                             [1, 256, 84, 84]          --
+│    │    └─EdgeBlock: 3-9                         [1, 256, 84, 84]          394,752
+│    └─Sequential: 2-6                             [1, 512, 42, 42]          --
+│    │    └─BottleneckBlock: 3-10                  [1, 512, 42, 42]          305,920
+│    │    └─BottleneckBlock: 3-11                  [1, 512, 42, 42]          206,592
+│    │    └─BottleneckBlock: 3-12                  [1, 512, 42, 42]          206,592
+│    │    └─BottleneckBlock: 3-13                  [1, 512, 42, 42]          206,592
+│    └─Sequential: 2-7                             [1, 1536, 21, 21]         --
+│    │    └─BottleneckBlock: 3-14                  [1, 1536, 21, 21]         1,802,496
+│    │    └─BottleneckBlock: 3-15                  [1, 1536, 21, 21]         1,406,208
+│    │    └─BottleneckBlock: 3-16                  [1, 1536, 21, 21]         1,406,208
+│    │    └─BottleneckBlock: 3-17                  [1, 1536, 21, 21]         1,406,208
+│    │    └─BottleneckBlock: 3-18                  [1, 1536, 21, 21]         1,406,208
+│    │    └─BottleneckBlock: 3-19                  [1, 1536, 21, 21]         1,406,208
+│    └─Sequential: 2-8                             [1, 1536, 11, 11]         --
+│    │    └─BottleneckBlock: 3-20                  [1, 1536, 11, 11]         7,120,896
+│    │    └─BottleneckBlock: 3-21                  [1, 1536, 11, 11]         4,758,528
+│    │    └─BottleneckBlock: 3-22                  [1, 1536, 11, 11]         4,758,528
+│    │    └─BottleneckBlock: 3-23                  [1, 1536, 11, 11]         4,758,528
+├─ConvNormAct: 1-3                                 [1, 2048, 11, 11]         --
+│    └─Conv2d: 2-9                                 [1, 2048, 11, 11]         3,145,728
+│    └─BatchNormAct2d: 2-10                        [1, 2048, 11, 11]         4,096
+│    │    └─Identity: 3-24                         [1, 2048, 11, 11]         --
+│    │    └─SiLU: 3-25                             [1, 2048, 11, 11]         --
 ├─ClassifierHead: 1-4                              [1, 4]                    --
-│    └─SelectAdaptivePool2d: 2-10                  [1, 1280]                 --
-│    │    └─AdaptiveAvgPool2d: 3-19                [1, 1280, 1, 1]           --
-│    │    └─Flatten: 3-20                          [1, 1280]                 --
-│    └─Dropout: 2-11                               [1, 1280]                 --
-│    └─Linear: 2-12                                [1, 4]                    5,124
-│    └─Identity: 2-13                              [1, 4]                    --
+│    └─SelectAdaptivePool2d: 2-11                  [1, 2048]                 --
+│    │    └─AdaptiveAvgPool2d: 3-26                [1, 2048, 1, 1]           --
+│    │    └─Flatten: 3-27                          [1, 2048]                 --
+│    └─Dropout: 2-12                               [1, 2048]                 --
+│    └─Linear: 2-13                                [1, 4]                    8,196
+│    └─Identity: 2-14                              [1, 4]                    --
 ====================================================================================================
-Total params: 18,400,380
-Trainable params: 18,400,380
+Total params: 34,806,164
+Trainable params: 34,806,164
 Non-trainable params: 0
-Total mult-adds (G): 10.65
+Total mult-adds (G): 13.60
 ====================================================================================================
-Input size (MB): 1.77
-Forward/backward pass size (MB): 209.83
-Params size (MB): 73.44
-Estimated Total Size (MB): 285.04
+Input size (MB): 1.33
+Forward/backward pass size (MB): 236.36
+Params size (MB): 138.82
+Estimated Total Size (MB): 376.51
 ====================================================================================================
